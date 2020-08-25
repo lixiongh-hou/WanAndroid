@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--弧形的界面属性-->
+    <declare-styleable name="ArcImageView">
+        <attr name="arcHeight" format="dimension"/>
+        <attr name="bColor" format="color"/>
+        <attr name="mDirection" format="enum">
+            <enum name="out" value="0"/>
+            <enum name="inner" value="1"/>
+        </attr>
+        <attr name="mPosition" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="top" value="1"/>
+            <enum name="right" value="2"/>
+            <enum name="bottom" value="3"/>
+        </attr>
+    </declare-styleable>
+</resources>

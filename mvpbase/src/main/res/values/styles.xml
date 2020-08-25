@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    // ---------------------------------------------------------------------------------------------
+    // 主题
+
+    <!--全局主题-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        // 标题栏颜色
+        <item name="colorPrimary">@color/colorPrimary</item>
+        // 状态栏颜色
+        <item name="colorPrimaryDark">@color/trans</item>
+        // 输入框游标颜色
+        <item name="colorAccent">@color/colorAccent</item>
+        //
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:background">@null</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+    </style>
+    <!--Welcome主题-->
+    <style name="WelcomeTheme" parent="@style/AppTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <!--黑色字体menu样式-->
+    <style name="ToolbarMenuTextTheme" parent="@style/AppTheme">
+        <item name="android:actionMenuTextColor">@color/black</item>
+    </style>
+    <!--menu样式-->
+    <style name="OverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <!-- 是否覆盖锚点，默认为true，即盖住Toolbar -->
+        <item name="overlapAnchor">false</item>
+        <!--垂直偏移量-->
+        <item name="android:dropDownVerticalOffset">4dp</item>
+        <!--距离外边距-->
+        <item name="android:layout_marginRight">4dp</item>
+    </style>
+    // ---------------------------------------------------------------------------------------------
+    // Dialog样式
+
+<!--    <style name="commonStyleDialog" parent="@android:style/Theme.Dialog">-->
+<!--        <item name="android:windowFullscreen">true</item>-->
+<!--        <item name="android:windowFrame">@null</item>-->
+<!--        <item name="android:windowIsFloating">true</item>-->
+<!--        <item name="android:windowIsTranslucent">false</item>-->
+<!--        <item name="android:windowNoTitle">true</item>-->
+<!--        <item name="android:background">@android:color/transparent</item>-->
+<!--        <item name="android:windowBackground">@android:color/transparent</item>-->
+<!--    </style>-->
+    <style name="myTransparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item> <!-- 无标题 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <!--弹出框周围模糊-->
+    <style name="style_dialog_fuzzy" parent="myTransparent">
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <!--弹出框周围不模糊-->
+    <style name="style_dialog_no_fuzzy" parent="myTransparent">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <!--上部弹窗框动画-->
+    <style name="DialogTopAnim">
+        <item name="android:windowEnterAnimation">@anim/dialog_top_anim_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_top_anim_exit</item>
+    </style>
+    <!--底部弹窗框动画-->
+    <style name="DialogBottomAnim">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_anim_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_anim_exit</item>
+    </style>
+
+    <!--底部弹窗框动画-->
+    <style name="DialogBottomAnim1">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_anim_enter1</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_anim_exit1</item>
+    </style>
+
+    <!--中间弹窗框动画-->
+    <style name="DialogCentreAnim">
+        <item name="android:windowEnterAnimation">@anim/dialog_centre_anim_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_centre_anim_exit</item>
+    </style>
+
+    <!--海报动画-->
+    <style name="DialogHaiBaoAnim">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_anim_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_centre_anim_exit</item>
+    </style>
+
+    <!--自定义耗时对话框-->
+    <style name="CustomProgressDialog" parent="Theme.AppCompat.Dialog">
+        <!--此属性控制悬浮窗背景是否变暗-->
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+</resources>

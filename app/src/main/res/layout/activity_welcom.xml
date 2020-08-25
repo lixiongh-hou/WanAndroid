@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/theme_color">
+
+    <TextView
+        android:id="@+id/textSvg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeSvg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_15"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_24sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_170dp"
+        android:src="@drawable/welcome_bottom"
+        android:layout_alignParentBottom="true"/>
+
+    <RelativeLayout
+        android:id="@+id/relativeSvg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/space_200dp"
+        android:layout_width="@dimen/space_110dp"
+        android:layout_height="@dimen/space_110dp">
+
+        <com.jaredrummler.android.widget.AnimatedSvgView
+            android:layout_centerInParent="true"
+            android:id="@+id/imgSvg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:animatedSvgFillColors="@array/google_glyph_colors"
+            app:animatedSvgFillStart="1200"
+            app:animatedSvgFillTime="1000"
+            app:animatedSvgGlyphStrings="@array/google_glyph_strings"
+            app:animatedSvgTraceTime="1500"
+            app:animatedSvgTraceTimePerGlyph="1000"
+            app:animatedSvgTraceMarkerLength="40" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

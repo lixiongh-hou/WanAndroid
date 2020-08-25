@@ -1,0 +1,3 @@
+include ':mvpbase'
+include ':app'
+rootProject.name = "WanAndroid"

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/accountText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/trans"
+        android:enabled="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="@string/account"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textColorHint="@color/color_99"
+        android:textSize="@dimen/font_size_20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/accountTip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="4dp"
+        android:text="已注册的账号"
+        android:textColor="@color/color_66"
+        android:textSize="@dimen/font_size_10sp"
+        app:layout_constraintStart_toStartOf="@id/accountText"
+        app:layout_constraintTop_toBottomOf="@id/accountText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/passwordText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@color/trans"
+        android:enabled="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="@string/password"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textColorHint="@color/color_99"
+        android:textSize="@dimen/font_size_20sp"
+        app:layout_constraintTop_toBottomOf="@+id/accountTip"
+        app:passwordToggleEnabled="true" />
+
+    <TextView
+        android:id="@+id/passwordTip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="4dp"
+        android:text="注册账号的密码"
+        android:textColor="@color/color_66"
+        android:textSize="@dimen/font_size_10sp"
+        app:layout_constraintStart_toStartOf="@id/passwordText"
+        app:layout_constraintTop_toBottomOf="@id/passwordText" />
+    <com.example.mvpbase.widget.MsgView
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="45dp"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_13sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:mv_cornerRadius="@dimen/space_5dp"
+        app:mv_backgroundColor="@color/theme_color"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTip" />
+
+    <TextView
+        android:id="@+id/registerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/register_tips"
+        android:textColor="@color/theme_color"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+</androidx.constraintlayout.widget.ConstraintLayout>

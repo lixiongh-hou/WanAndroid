@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingStart="@dimen/space_13dp"
+    android:paddingEnd="@dimen/space_13dp"
+    android:paddingTop="@dimen/space_5dp"
+    android:paddingBottom="@dimen/space_5dp">
+
+    <com.example.mvpbase.widget.MsgView
+        android:id="@+id/itemSystemChildren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:mv_cornerRadius="@dimen/space_3dp"
+        app:mv_backgroundColor="@color/theme_color"
+        android:text="李雄厚"
+        android:textColor="@color/white"
+        android:paddingStart="@dimen/space_15dp"
+        android:paddingEnd="@dimen/space_15dp"
+        android:paddingTop="@dimen/space_5dp"
+        android:paddingBottom="@dimen/space_5dp"/>
+
+</LinearLayout>

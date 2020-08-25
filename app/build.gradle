@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.example.wanandroid"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+}
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation project(path: ':mvpbase')
+    //黄油刀
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+    //glide
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    //RecyclerView万能适配器
+    implementation 'com.zhy:base-rvadapter:3.0.3'
+    //ListView适配器
+    implementation 'com.zhy:base-adapter:3.0.3'
+    //svg
+    implementation 'com.jaredrummler:animated-svg-view:1.0.5'
+    //有动画的登录按钮
+    implementation 'com.github.lihangleo2:SmartLoadingView:1.3.2'
+    //ViewPage指示器
+    implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
+    //Room数据库
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
+
+    //图片浏览
+    implementation 'com.github.wanglu1209:PhotoViewer:0.50'
+    //WebView
+    implementation 'com.just.agentweb:agentweb:4.1.3'
+    //加载GIF图
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.16'
+
+}

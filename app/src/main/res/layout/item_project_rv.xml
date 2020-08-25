@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lihang.ShadowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:hl_cornerRadius="5dp"
+    app:hl_dx="@dimen/space_2dp"
+    app:hl_dy="@dimen/space_2dp"
+    app:hl_shadowColor="#32999999"
+    app:hl_shadowBackColor="@color/white"
+    app:hl_shadowLimit="@dimen/space_5dp"
+    android:layout_marginStart="@dimen/space_5dp"
+    android:layout_marginEnd="@dimen/space_5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_13dp">
+
+        <ImageView
+            android:id="@+id/projectImage"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_180dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"/>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_marginStart="@dimen/space_13dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/projectTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="李雄厚"
+                android:textSize="@dimen/font_size_13sp"
+                android:textColor="@color/black"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/projectContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="李雄厚"
+                android:layout_marginTop="@dimen/space_8dp"
+                android:textSize="@dimen/font_size_12sp"
+                android:textColor="@color/color_99"
+                android:layout_below="@id/projectTitle"
+                android:maxLines="5"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/projectTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="李雄厚"
+                android:textSize="@dimen/font_size_12sp"
+                android:textColor="@color/color_99"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/space_40dp"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <ImageView
+                android:id="@+id/projectCollect"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/collect_selector"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</com.lihang.ShadowLayout>

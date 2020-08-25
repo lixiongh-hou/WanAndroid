@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lihang.ShadowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:hl_cornerRadius="@dimen/space_5dp"
+    app:hl_dx="1dp"
+    app:hl_dy="1dp"
+    app:hl_shadowColor="#32999999"
+    app:hl_shadowBackColor="@color/white"
+    app:hl_shadowLimit="5dp"
+    android:layout_marginStart="@dimen/space_5dp"
+    android:layout_marginEnd="@dimen/space_5dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_13dp">
+
+        <ImageView
+            android:id="@+id/itemPointsRankingCrown"
+            android:layout_width="@dimen/space_35dp"
+            android:layout_height="@dimen/space_35dp"
+            android:src="@drawable/icon_champion"
+            android:layout_marginEnd="@dimen/space_8dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/itemPointsRankingCrown">
+
+            <TextView
+                android:id="@+id/itemPointsRankingName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_size_16sp"
+                android:textColor="@color/black"
+                android:layout_marginEnd="@dimen/space_13dp" />
+
+            <com.example.mvpbase.widget.MsgView
+                android:id="@+id/itemPointsRankingLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_size_8sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:paddingStart="@dimen/space_2dp"
+                android:paddingEnd="@dimen/space_2dp"
+                app:mv_cornerRadius="@dimen/space_1dp" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/itemPointsRankingCoinCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_size_16sp"
+            android:textColor="@color/black"
+            android:gravity="end"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+</com.lihang.ShadowLayout>

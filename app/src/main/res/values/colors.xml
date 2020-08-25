@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="test_1">#479cea</color>
+    <color name="test_2">#f2faff</color>
+
+    <color name="color_99">#999999</color>
+    <color name="color_55">#555555</color>
+    <color name="color_66">#666666</color>
+    <color name="color_33">#333333</color>
+    <color name="color_CC">#CCCCCC</color>
+    <color name="color_red">#ffff4444</color>
+    <color name="color_F5">#F5F5F5</color>
+    <color name="color_F3">#F3F3F3</color>
+    <color name="color_F8">#F8F8F8</color>
+    <color name="color_ED">#EDEDED</color>
+    <color name="color_6B">#6B6B6B</color>
+
+
+    //少女粉
+    <color name="theme_FB7299">#FB7299</color>
+    //基佬紫
+    <color name="theme_673AB7">#673AB7</color>
+    //姨妈红
+    <color name="theme_F44336">#F44336</color>
+    //咸蛋黄
+    <color name="theme_FDD835">#FDD835</color>
+    //早苗绿
+    <color name="theme_8BC34A">#8BC34A</color>
+
+
+</resources>

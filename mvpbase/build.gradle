@@ -1,0 +1,79 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //Androidx直接集成所有的MaterialDesign材料
+    api 'com.google.android.material:material:1.2.0'
+    //Glide拓展
+    api 'jp.wasabeef:glide-transformations:2.0.1'
+    api ("com.github.bumptech.glide:glide:4.11.0") {
+        exclude group: "com.android.support"
+    }
+    //谷歌官方的布局方式，可以加载在RecyclerView中设置成流式布局
+    api 'com.google.android:flexbox:2.0.1'
+    //黄油刀
+    api 'com.jakewharton:butterknife:10.2.1'
+    // 沉浸式
+    api 'com.gyf.barlibrary:barlibrary:2.3.0'
+    //eventBus
+    api 'org.greenrobot:eventbus:3.2.0'
+    //下拉刷新
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    /*************************别轻易升级*****************************/
+    // Retrofit2
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    // 通过GSON将结果转换为Bean对象
+    api 'com.squareup.retrofit2:converter-gson:2.4.0'
+    // RxJava2回调适配器
+    api('com.squareup.retrofit2:adapter-rxjava2:2.3.0') {
+        exclude module: "rxjava"
+    }
+    /*************************别轻易升级*****************************/
+    //RxJava 建议别升级，会出现一个问题不知道咋解决
+    //https://github.com/ReactiveX/RxAndroid
+    api 'io.reactivex.rxjava2:rxjava:2.0.1'
+    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //这个东西也是RxJava的,本来不需要，但是我使用的Room数据库后就出现问题需要这个东西
+    api "org.reactivestreams:reactive-streams:1.0.3"
+    // 基本数据类型转换器
+    api 'com.squareup.retrofit2:converter-scalars:2.4.0'
+    //各种加载状态的控件
+    api 'com.kingja.loadsir:loadsir:1.3.8'
+    //Banner
+    api 'com.github.xiaohaibin:XBanner:1.6.6'
+    //阴影布局
+    api 'com.github.lihangleo2:ShadowLayout:2.1.8'
+
+}

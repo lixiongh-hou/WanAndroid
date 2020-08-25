@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/theme_color</color>
+    <color name="colorPrimaryDark">@color/theme_color</color>
+    <color name="colorAccent">@color/theme_color</color>
+
+    <!--默认主题色 可以根据需求自己修改即可-->
+    <color name="theme_color">#2196F3</color>
+    <!--透明-->
+    <color name="trans">#00000000</color>
+    <!--黑色-->
+    <color name="black">#000000</color>
+    <color name="black_trans_40">#40000000</color>
+
+    <!--白色-->
+    <color name="white">#FFFFFF</color>
+    <!--浅黑色-->
+    <color name="color_45">#454545</color>
+    <color name="color_70">#707070</color>
+</resources>

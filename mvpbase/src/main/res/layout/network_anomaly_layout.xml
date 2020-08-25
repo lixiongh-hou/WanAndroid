@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/network_anomaly" />
+
+    <TextView
+        android:text="@string/empty_network"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/color_70"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_size_16sp"/>
+    <com.example.mvpbase.widget.MsgView
+        android:id="@+id/reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:mv_cornerRadius="@dimen/space_50dp"
+        app:mv_backgroundColor="@color/theme_color"
+        android:text="@string/reload"
+        android:textSize="@dimen/font_size_16sp"
+        android:textColor="@color/white"
+        android:paddingStart="@dimen/space_15dp"
+        android:paddingEnd="@dimen/space_15dp"
+        android:paddingTop="@dimen/space_5dp"
+        android:paddingBottom="@dimen/space_5dp"
+        android:layout_marginTop="@dimen/space_10dp"/>
+</LinearLayout>

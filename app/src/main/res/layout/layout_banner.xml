@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.stx.xhb.xbanner.XBanner xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/banner"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/space_100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:isShowTips="true"
+    app:isTipsMarquee="true"
+    app:tipTextColor="@color/white"
+    app:tipTextSize="@dimen/font_size_13sp"
+    app:isHandLoop="true"
+    app:pointsPosition="RIGHT"
+    app:pointsContainerBackground="@color/black_trans_40">
+
+</com.stx.xhb.xbanner.XBanner>

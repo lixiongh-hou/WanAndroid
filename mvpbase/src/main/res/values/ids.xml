@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--刷新-->
+    <item name="mPullRefreshLayout" type="id" />
+    <item name="mPullRefreshView" type="id" />
+    <item name="mPullEmptyLayout" type="id" />
+    <item name="mPullEmptyTv" type="id" />
+    <item name="mPullEmptyImg" type="id" />
+
+    <!--Glide使用时，设置ImageView的Tag-->
+    <item name="glide_img_tag" type="id" />
+
+</resources>

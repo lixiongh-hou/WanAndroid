@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lihang.ShadowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:hl_cornerRadius="@dimen/space_5dp"
+    app:hl_dx="1dp"
+    app:hl_dy="1dp"
+    app:hl_shadowColor="#32999999"
+    app:hl_shadowBackColor="@color/white"
+    app:hl_shadowLimit="5dp"
+    android:layout_marginStart="@dimen/space_5dp"
+    android:layout_marginEnd="@dimen/space_5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_13dp"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/itemUserPointsContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_size_16sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/itemUserPointsTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_size_13sp"
+                android:textColor="@color/color_99"
+                android:layout_marginTop="@dimen/space_5dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/itemUserPointCoinCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_size_16sp" />
+    </LinearLayout>
+</com.lihang.ShadowLayout>

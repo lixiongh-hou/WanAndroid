@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lihang.ShadowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/shadowLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:hl_cornerRadius="5dp"
+    app:hl_dx="@dimen/space_2dp"
+    app:hl_dy="@dimen/space_2dp"
+    app:hl_shadowColor="#32999999"
+    app:hl_shadowBackColor="@color/white"
+    app:hl_shadowLimit="@dimen/space_5dp"
+    android:layout_marginStart="@dimen/space_5dp"
+    android:layout_marginEnd="@dimen/space_5dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/space_13dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <com.example.mvpbase.widget.MsgView
+                android:id="@+id/articleStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="置顶"
+                android:textColor="@color/color_red"
+                android:textSize="@dimen/font_size_10sp"
+                app:mv_cornerRadius="@dimen/space_3dp"
+                app:mv_strokeColor="@color/color_red"
+                app:mv_strokeWidth="@dimen/space_0.5dp"
+                android:layout_marginEnd="@dimen/font_size_12sp"
+                android:paddingStart="@dimen/space_5dp"
+                android:paddingEnd="@dimen/space_5dp"
+                android:paddingTop="@dimen/space_3dp"
+                android:paddingBottom="@dimen/space_3dp"
+                android:visibility="gone"/>
+            <com.example.mvpbase.widget.MsgView
+                android:id="@+id/articleNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新"
+                android:textColor="@color/color_red"
+                android:textSize="@dimen/font_size_10sp"
+                app:mv_cornerRadius="@dimen/space_3dp"
+                app:mv_strokeColor="@color/color_red"
+                app:mv_strokeWidth="@dimen/space_0.5dp"
+                android:layout_marginEnd="@dimen/font_size_12sp"
+                android:paddingStart="@dimen/space_5dp"
+                android:paddingEnd="@dimen/space_5dp"
+                android:paddingTop="@dimen/space_3dp"
+                android:paddingBottom="@dimen/space_3dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/articleAuthor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/color_99"
+                android:textSize="@dimen/font_size_12sp"
+                android:layout_marginEnd="@dimen/space_20dp"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/articleTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_size_11sp"
+                android:textColor="@color/color_CC"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/articleTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="@dimen/font_size_13sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/font_size_16sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_15dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/articleType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size_12sp"
+                android:textColor="@color/color_99" />
+
+            <ImageView
+                android:id="@+id/articleCollect"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/collect_selector"
+                app:layout_constraintBottom_toBottomOf="@+id/item_article_type"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/item_article_type" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/articleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/alpha_fillet_5dp"
+        android:visibility="gone"
+        android:alpha="0">
+
+        <com.example.mvpbase.widget.MsgView
+            android:id="@+id/articleDel"
+            android:layout_width="@dimen/space_80dp"
+            android:layout_height="@dimen/space_80dp"
+            android:layout_centerInParent="true"
+            app:mv_cornerRadius="@dimen/space_100dp"
+            app:mv_backgroundColor="@color/color_red"
+            android:text="删除"
+            android:textSize="@dimen/font_size_13sp"
+            android:textColor="@color/white"
+            android:gravity="center" />
+    </RelativeLayout>
+</com.lihang.ShadowLayout>

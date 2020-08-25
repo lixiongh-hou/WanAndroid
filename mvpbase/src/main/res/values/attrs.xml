@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--圆形的ImageView-->
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+
+    <!--底部导航栏-->
+    <declare-styleable name="BottomNavBar">
+        <!--是一种图片还是两种-->
+        <attr name="bt_isDoublePicture" format="boolean"/>
+        <!--当只有一种中图片时候才会生效-->
+        <!--选中的图片底色-->
+        <attr name="bt_SelectPictureColor" format="color"/>
+        <!--为选中图片底色-->
+        <attr name="bt_NormalPictureColor" format="color"/>
+    </declare-styleable>
+
+    <!--样式TextView-->
+    <declare-styleable name="MsgView">
+        <!-- 圆角矩形背景色 -->
+        <attr name="mv_backgroundColor" format="color" />
+        <!-- 圆角弧度,单位dp-->
+        <attr name="mv_cornerRadius" format="dimension" />
+        <!-- 圆角弧度,单位dp-->
+        <attr name="mv_strokeWidth" format="dimension" />
+        <!-- 圆角边框颜色-->
+        <attr name="mv_strokeColor" format="color" />
+        <!-- 圆角弧度是高度一半-->
+        <attr name="mv_isRadiusHalfHeight" format="boolean" />
+        <!-- 圆角矩形宽高相等,取较宽高中大值-->
+        <attr name="mv_isWidthHeightEqual" format="boolean" />
+    </declare-styleable>
+</resources>

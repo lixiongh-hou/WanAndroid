@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mPullRefreshLayout">
+        <com.example.wanandroid.widget.CustomRefreshHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+<!--        <pl.droidsonroids.gif.GifImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:layout_srlSpinnerStyle="Scale"-->
+<!--            android:src="@drawable/timg"/>-->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:fillViewport="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.example.wanandroid.widget.ArcImageView
+                        android:id="@+id/userPointsBg"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_300dp"
+                        android:scaleType="fitXY"
+                        app:arcHeight="@dimen/space_80dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:mDirection="inner"
+                        app:mPosition="bottom" />
+
+                    <com.example.mvpbase.widget.image.CircleImageView
+                        android:id="@+id/userPointsHead"
+                        android:layout_width="@dimen/space_80dp"
+                        android:layout_height="@dimen/space_80dp"
+                        android:layout_marginTop="220dp"
+                        app:border_width="0dp"
+                        app:border_color="@color/trans"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/userPointsBg" />
+                    <LinearLayout
+                        android:id="@+id/userPointsNameLay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/userPointsBg"
+                        android:layout_marginTop="@dimen/space_10dp">
+
+                        <TextView
+                            android:id="@+id/userPointsName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_size_16sp"
+                            />
+                        <com.example.mvpbase.widget.MsgView
+                            android:id="@+id/userPointsLevel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/font_size_8sp"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:paddingStart="@dimen/space_2dp"
+                            android:paddingEnd="@dimen/space_2dp"
+                            app:mv_cornerRadius="@dimen/space_1dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/userPointsCoinCountLay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/userPointsNameLay">
+
+                        <TextView
+                            android:id="@+id/userPointsCoinCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_size_13sp" />
+
+                        <TextView
+                            android:id="@+id/userPointsRank"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_size_13sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/space_13dp"
+                        android:paddingEnd="@dimen/space_13dp"
+                        android:layout_marginTop="@dimen/space_30dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/userPointsCoinCountLay">
+
+                        <ImageView
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_integral" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/space_13dp"
+                            android:paddingEnd="@dimen/space_13dp"
+                            android:text="积分列表"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_size_16sp" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/userPointsRv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/userPointsBgTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:elevation="@dimen/space_8dp">
+        <com.example.mvpbase.widget.StatusBarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/userPointsToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/trans"
+            android:minHeight="?attr/actionBarSize"
+            android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:titleTextColor="@color/white">
+        </androidx.appcompat.widget.Toolbar>
+    </LinearLayout>
+</RelativeLayout>

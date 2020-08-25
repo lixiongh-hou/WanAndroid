@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F5"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_50dp"
+        android:text="主题颜色"
+        android:textSize="@dimen/font_size_13sp"
+        android:textColor="@color/color_66"
+        android:gravity="bottom"
+        android:paddingBottom="@dimen/space_10dp"
+        android:paddingStart="@dimen/space_13dp"
+        android:paddingEnd="@dimen/space_13dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/themeColorRv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:overScrollMode="never"/>
+</LinearLayout>
