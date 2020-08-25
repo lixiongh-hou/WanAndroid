@@ -178,6 +178,13 @@ public interface UrlParam {
         String URL = "lg/user_article/delete/{id}/json";
     }
 
+    /**
+     * 每日一问
+     */
+    interface QuestionArticle{
+        String URL = "wenda/list/{page}/json";
+    }
+
 
 
 }

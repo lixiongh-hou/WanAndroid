@@ -3,6 +3,7 @@ package com.example.wanandroid.api;
 import com.example.mvpbase.bean.BaseBean;
 import com.example.wanandroid.main.bean.MyShareBean;
 import com.example.wanandroid.main.bean.PointsRankingBean;
+import com.example.wanandroid.main.bean.QuestionArticleBean;
 import com.example.wanandroid.main.bean.SearchBean;
 import com.example.wanandroid.main.bean.SearchHotKeyBean;
 import com.example.wanandroid.main.bean.SquareListBean;
@@ -256,11 +257,21 @@ public interface ApiService {
 
     /**
      * 删除自己分享
-     * @param page
+     * @param id
      * @return
      */
     @POST(UrlParam.DelMyShare.URL)
     Observable<BaseBean<JsonElement>> delMyShare(
-            @Path("id") String page
+            @Path("id") String id
+    );
+
+    /**
+     * 每日一问
+     * @param page
+     * @return
+     */
+    @GET(UrlParam.QuestionArticle.URL)
+    Observable<BaseBean<QuestionArticleBean>> getQuestionArticle(
+            @Path("page") String page
     );
 }

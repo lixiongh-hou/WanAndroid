@@ -100,7 +100,6 @@ public class MainActivity extends BaseActivity {
             return true;
         });
         //测试
-        //分支测试
     }
 
 
@@ -181,11 +180,14 @@ public class MainActivity extends BaseActivity {
                         gotoActivity(MyCollectionActivity.class);
                     }
                     break;
-                    //我的分享
+                //我的分享
                 case R.id.nav_menu_share:
                     if (UserBiz.hasLogin(mContext)) {
                         gotoActivity(MyShareActivity.class);
                     }
+                 //每日一问
+                case R.id.nav_menu_question:
+                    gotoActivity(QuestionArticleActivity.class);
                     break;
                 //设置主题色
                 case R.id.nav_menu_theme:
