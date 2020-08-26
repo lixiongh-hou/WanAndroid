@@ -10,7 +10,7 @@ import com.example.mvpbase.R;
 import com.example.mvpbase.dialog.BaseFragmentDialog;
 import com.example.mvpbase.dialog.ViewHolder;
 import com.example.mvpbase.utils.check.CheckUtil;
-import com.example.wanandroid.utils.ThemeColorUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 
 /**
  * @author: 雄厚

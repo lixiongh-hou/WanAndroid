@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mvpbase.annotation.BindLayoutRes;
 import com.example.mvpbase.base.BaseInterfaceActivity;
-import com.example.mvpbase.utils.log.LogUtil;
 import com.example.mvpbase.utils.toast.ToastUtil;
 import com.example.mvpbase.widget.MsgView;
 import com.example.wanandroid.R;
@@ -18,7 +17,7 @@ import com.example.wanandroid.main.bean.PointsRankingBean;
 import com.example.wanandroid.main.bean.UserPointsBean;
 import com.example.wanandroid.main.mvp.PointsRankingPresenter;
 import com.example.wanandroid.main.mvp.PointsRankingView;
-import com.example.wanandroid.utils.ThemeColorUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 

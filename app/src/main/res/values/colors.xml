@@ -16,6 +16,8 @@
     <color name="color_6B">#6B6B6B</color>
 
 
+    //夜间模式
+    <color name="theme_181818">#181818</color>
     //少女粉
     <color name="theme_FB7299">#FB7299</color>
     //基佬紫

@@ -1,7 +1,7 @@
 <resources>
     <!--默认TabLayout样式-->
     <style name="TabLayoutStyle" parent="Widget.Design.TabLayout">
-        <item name="tabBackground">@color/white</item>
+        <item name="tabBackground">@color/tab_bg</item>
         <item name="tabGravity">fill</item>
         <item name="tabMode">scrollable</item>
         <item name="tabIndicatorFullWidth">false</item>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!--侧滑菜单-->
-    <item android:title="@string/app_name"/>
+    <item android:title="@string/app_name" />
     <group android:id="@+id/common">
         <item
             android:id="@+id/nav_menu_rank"

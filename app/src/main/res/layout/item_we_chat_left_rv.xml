@@ -5,7 +5,6 @@
     android:layout_height="@dimen/space_55dp"
     android:clickable="true"
     android:focusable="true"
-    android:background="@color/color_F8"
     android:orientation="vertical">
 
     <TextView

@@ -2,18 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white">
+    android:orientation="vertical">
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/systemDetailedToolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/space_50dp"
-        android:background="@color/white"
-        style="@style/TabLayoutStyle"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/space_1dp"
-        android:background="@color/color_F5"/>
+        android:background="@color/white_bg"
+        style="@style/TabLayoutStyle"
+        android:elevation="@dimen/space_8dp"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/systemDetailedVp"

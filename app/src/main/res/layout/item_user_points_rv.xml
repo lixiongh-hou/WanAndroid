@@ -7,7 +7,7 @@
     app:hl_dx="1dp"
     app:hl_dy="1dp"
     app:hl_shadowColor="#32999999"
-    app:hl_shadowBackColor="@color/white"
+    app:hl_shadowBackColor="@color/rv_item_bg"
     app:hl_shadowLimit="5dp"
     android:layout_marginStart="@dimen/space_5dp"
     android:layout_marginEnd="@dimen/space_5dp">

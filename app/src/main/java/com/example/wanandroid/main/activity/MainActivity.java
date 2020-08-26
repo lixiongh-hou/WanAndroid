@@ -1,22 +1,26 @@
 package com.example.wanandroid.main.activity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mvpbase.annotation.BindEventBus;
 import com.example.mvpbase.annotation.BindLayoutRes;
 import com.example.mvpbase.base.BaseActivity;
-import com.example.wanandroid.dilaog.LoadingDialog;
 import com.example.wanandroid.dilaog.PromptDialog;
 import com.example.mvpbase.eventbus.EventBusUtil;
 import com.example.mvpbase.swipeBack.ActivityLifecycleManage;
@@ -30,6 +34,7 @@ import com.example.mvpbase.widget.StatusBarView;
 import com.example.mvpbase.widget.image.CircleImageView;
 import com.example.wanandroid.R;
 import com.example.wanandroid.event.Type;
+import com.example.wanandroid.main.event.NightModeEvent;
 import com.example.wanandroid.ui.home.event.HomeEvent;
 import com.example.wanandroid.ui.home.fragment.HomeFragment;
 import com.example.wanandroid.ui.login.activity.LogInActivity;
@@ -38,14 +43,18 @@ import com.example.wanandroid.main.event.MainEvent;
 import com.example.wanandroid.ui.navigation.fragment.NavigationFragment;
 import com.example.wanandroid.ui.project.fragment.ProjectFragment;
 import com.example.wanandroid.ui.system.fragment.SystemFragment;
-import com.example.wanandroid.utils.ThemeColorUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 import com.example.wanandroid.utils.UserBiz;
 import com.example.wanandroid.wechat.fragment.WeChatFragment;
+import com.google.android.material.internal.NavigationMenuPresenter;
+import com.google.android.material.internal.NavigationMenuView;
 import com.google.android.material.navigation.NavigationView;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+import org.jetbrains.annotations.NotNull;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,7 +98,7 @@ public class MainActivity extends BaseActivity {
         initColor();
         initUser();
         setToolBarTitle(mToolbarTitles.get(0));
-        mMainBar.setTextColor(R.color.black, ThemeColorUtil.getThemeColor(mContext));
+        mMainBar.setTextColor(ContextCompat.getColor(mContext, R.color.black), ThemeColorUtil.getThemeColor(mContext));
         mMainBar.addTab(HomeFragment.getInstance(), new BottomNavBar.TabParam(mToolbarTitles.get(0), R.drawable.navigation_home));
         mMainBar.addTab(SystemFragment.getInstance(), new BottomNavBar.TabParam(mToolbarTitles.get(1), R.drawable.navigation_system));
         mMainBar.addTab(WeChatFragment.getInstance(), new BottomNavBar.TabParam(mToolbarTitles.get(2), R.drawable.navigation_wechat));
@@ -107,11 +116,11 @@ public class MainActivity extends BaseActivity {
      * 设置主题色
      */
     private void initColor() {
-        mMainBar.setTextColor(R.color.black, ThemeColorUtil.getThemeColor(mContext));
-        mMainBar.setImageColor(R.color.black, ThemeColorUtil.getThemeColor(mContext));
-        mToolbar.setBackgroundColor(ThemeColorUtil.getThemeColor(mContext));
-        headView.setBackgroundColor(ThemeColorUtil.getThemeColor(mContext));
-        mStatusBarView.setBackgroundColor(ThemeColorUtil.getThemeColor(mContext));
+        mMainBar.setTextColor(ContextCompat.getColor(mContext, R.color.black), ThemeColorUtil.getThemeColor(mContext));
+        mMainBar.setImageColor(ContextCompat.getColor(mContext, R.color.black), ThemeColorUtil.getThemeColor(mContext));
+        mToolbar.setBackgroundColor(ThemeColorUtil.getTitleColor(mContext));
+        headView.setBackgroundColor(ThemeColorUtil.getTitleColor(mContext));
+        mStatusBarView.setBackgroundColor(ThemeColorUtil.getTitleColor(mContext));
     }
 
     private void initToolbarTitles() {
@@ -162,6 +171,7 @@ public class MainActivity extends BaseActivity {
             }
             mDrawerMain.closeDrawers();
         });
+
         mNavigationDraw.setNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 //排行榜
@@ -185,6 +195,7 @@ public class MainActivity extends BaseActivity {
                     if (UserBiz.hasLogin(mContext)) {
                         gotoActivity(MyShareActivity.class);
                     }
+                    break;
                  //每日一问
                 case R.id.nav_menu_question:
                     gotoActivity(QuestionArticleActivity.class);
@@ -216,7 +227,6 @@ public class MainActivity extends BaseActivity {
             return false;
         });
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search_menu, menu);
@@ -255,6 +265,10 @@ public class MainActivity extends BaseActivity {
     public void changeThemeEvent(ChangeThemeEvent event) {
         initColor();
         mMainBar.setCurrentItem(mMainBar.getCurrentItem());
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void nightModeEvent(NightModeEvent event){
+        recreate();
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

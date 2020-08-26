@@ -21,14 +21,13 @@ import com.example.mvpbase.utils.check.CheckUtil;
 import com.example.mvpbase.utils.toast.ToastUtil;
 import com.example.wanandroid.R;
 import com.example.wanandroid.event.Type;
-import com.example.wanandroid.main.event.MainEvent;
 import com.example.wanandroid.main.event.MyCollectionEvent;
 import com.example.wanandroid.ui.home.bean.DatasBean;
 import com.example.wanandroid.ui.home.event.HomeEvent;
 import com.example.wanandroid.main.bean.MyCollectionBean;
 import com.example.wanandroid.main.mvp.MyCollectionPresenter;
 import com.example.wanandroid.main.mvp.MyCollectionView;
-import com.example.wanandroid.utils.ThemeColorUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
@@ -90,7 +89,7 @@ public class MyCollectionActivity extends BaseInterfaceActivity<MyCollectionPres
             }
         };
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-        mRecyclerView.addItemDecoration(new ListDivider(5, R.color.white, false));
+        mRecyclerView.addItemDecoration(new ListDivider(5, R.color.rv_item_bg, false));
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(new MultiItemTypeAdapter.OnItemClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)

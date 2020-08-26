@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#181818</color>
+    <color name="colorPrimaryDark">#181818</color>
+    <color name="colorAccent">#80666666</color>
+    <!--tab背景色-->
+    <color name="tab_bg">#383838</color>
+    <!--tab文字颜色-->
+    <color name="tab_text">#D3D3D3</color>
+    <!--分割线背景色-->
+    <color name="line_color">#383838</color>
+
+    <!--灰色Activity背景-->
+    <color name="activity_bg">#181818</color>
+    <!--灰色背景对应的Rv背景-->
+    <color name="rv_bg">#383838</color>
+    <!--灰色背景对应的分割线背景-->
+    <color name="rv_line_bg">#585858</color>
+
+    <!--刷新控件头和脚字体颜色-->
+    <color name="refresh_text">#D3D3D3</color>
+
+    <!--白色背景-->
+    <color name="white_bg">#383838</color>
+    <!--白色背景对应的Rv背景-->
+    <color name="rv_item_bg">#181818</color>
+
+    <!--黑色-->
+    <color name="black">#D3D3D3</color>
+</resources>

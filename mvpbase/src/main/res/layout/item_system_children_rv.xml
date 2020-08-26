@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         app:mv_cornerRadius="@dimen/space_3dp"
         app:mv_backgroundColor="@color/theme_color"
-        android:text="李雄厚"
         android:textColor="@color/white"
         android:paddingStart="@dimen/space_15dp"
         android:paddingEnd="@dimen/space_15dp"

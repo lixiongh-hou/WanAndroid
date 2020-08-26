@@ -28,6 +28,7 @@ import com.example.mvpbase.annotation.BindLayoutResUtil;
 import com.example.mvpbase.base.delegate.DelegateImpl;
 import com.example.mvpbase.base.delegate.IDelegatePublic;
 import com.example.mvpbase.eventbus.EventBusUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 import com.gyf.barlibrary.ImmersionBar;
 import com.kingja.loadsir.callback.Callback;
 import com.kingja.loadsir.core.LoadService;
@@ -78,7 +79,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         mStatusBar = ImmersionBar.with(this);
         // 状态栏深色字体
         mStatusBar.statusBarDarkFont(false)
-                .flymeOSStatusBarFontColor(R.color.white)
+                .flymeOSStatusBarFontColor(R.color.rv_item_bg)
                 .keyboardEnable(false, WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN |
                         WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
                 .init();
@@ -222,7 +223,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected void statusBarFontWhite() {
         mStatusBar.statusBarDarkFont(false)
-                .flymeOSStatusBarFontColor(R.color.white)
+                .flymeOSStatusBarFontColor(R.color.rv_item_bg)
                 .init();
     }
 
@@ -249,7 +250,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void setTitleBar(String title, int color){
         if (mToolbar != null){
             mToolbar.setTitle(title);
-            mLinearLayout.setBackgroundColor(color);
+            mLinearLayout.setBackgroundColor(ThemeColorUtil.getTitleColor(mContext));
             setSupportActionBar(mToolbar);
             ActionBar supportActionBar = getSupportActionBar();
             if (supportActionBar != null) {

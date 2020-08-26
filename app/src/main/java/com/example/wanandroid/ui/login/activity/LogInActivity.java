@@ -20,7 +20,7 @@ import com.example.wanandroid.ui.login.bean.LogInBean;
 import com.example.wanandroid.ui.login.mvp.LogInPresenter;
 import com.example.wanandroid.ui.login.mvp.LogInView;
 import com.example.wanandroid.main.event.MainEvent;
-import com.example.wanandroid.utils.ThemeColorUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 
 import java.util.HashMap;
 import java.util.Map;

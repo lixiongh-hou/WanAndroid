@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
@@ -43,8 +44,8 @@ public class BottomNavBar extends LinearLayout {
         super(context, attrs, defStyleAttr);
         setOrientation(HORIZONTAL);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.BottomNavBar, defStyleAttr, 0);
-        normalIvColor = typedArray.getColor(R.styleable.BottomNavBar_bt_NormalPictureColor, normalIvColor);
-        selectIvColor = typedArray.getColor(R.styleable.BottomNavBar_bt_SelectPictureColor, selectIvColor);
+        normalIvColor = typedArray.getResourceId(R.styleable.BottomNavBar_bt_NormalPictureColor, normalIvColor);
+        selectIvColor = typedArray.getResourceId(R.styleable.BottomNavBar_bt_SelectPictureColor, selectIvColor);
         isDoublePicture = typedArray.getBoolean(R.styleable.BottomNavBar_bt_isDoublePicture, isDoublePicture);
         typedArray.recycle();
     }
@@ -59,13 +60,13 @@ public class BottomNavBar extends LinearLayout {
     /**
      * 文字的颜色
      */
-    private int normalTvColor = 0XFF000000;
-    private int selectTvColor = 0XFF0091EA;
+    private int normalTvColor = ContextCompat.getColor(getContext(), R.color.black);
+    private int selectTvColor = ContextCompat.getColor(getContext(), R.color.theme_color);
     /**
      * 图片底色
      */
-    private int normalIvColor = 0XFF000000;
-    private int selectIvColor = 0XFF0091EA;
+    private int normalIvColor = ContextCompat.getColor(getContext(), R.color.black);
+    private int selectIvColor = ContextCompat.getColor(getContext(), R.color.theme_color);
     /**
      * 是否是双图片
      */
@@ -74,14 +75,14 @@ public class BottomNavBar extends LinearLayout {
     /**
      * 设置文字颜色
      */
-    public void setTextColor(@ColorRes int normalColorRes, @ColorRes int selectColorRes) {
+    public void setTextColor(@ColorInt int normalColorRes, @ColorInt int selectColorRes) {
         this.normalTvColor = normalColorRes;
         this.selectTvColor = selectColorRes;
     }
     /**
      * 设置图片颜色颜色
      */
-    public void setImageColor(@ColorRes int normalColorRes, @ColorRes int selectColorRes) {
+    public void setImageColor(@ColorInt int normalColorRes, @ColorInt int selectColorRes) {
         this.normalIvColor = normalColorRes;
         this.selectIvColor = selectColorRes;
     }

@@ -16,7 +16,7 @@ import com.example.wanandroid.R;
 import com.example.wanandroid.adapter.ExamplePagerAdapter;
 import com.example.wanandroid.ui.system.bean.SystemBean;
 import com.example.wanandroid.ui.system.fragment.SystemDetailedFragment;
-import com.example.wanandroid.utils.ThemeColorUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -103,7 +103,11 @@ public class SystemDetailedActivity extends BaseInterfaceActivity {
                         ((TextView) tabAt.getCustomView().findViewById(R.id.text1)).
                                 setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
                     }
-
+                }else {
+                    if (tabAt.getCustomView() != null){
+                        ((TextView) tabAt.getCustomView().findViewById(R.id.text1)).
+                                setTextColor(ContextCompat.getColor(mContext, R.color.tab_text));
+                    }
                 }
                 //通过tab对象找到自定义视图的ID
                 if (tabAt.getCustomView() != null) {
@@ -153,7 +157,7 @@ public class SystemDetailedActivity extends BaseInterfaceActivity {
             tvTab.setSelected(false);
             //恢复为默认字体大小
             tvTab.setTextSize(TypedValue.COMPLEX_UNIT_PX,getResources().getDimensionPixelSize(R.dimen.font_size_14sp));
-            tvTab.setTextColor(ContextCompat.getColor(mContext, R.color.color_66));
+            tvTab.setTextColor(ContextCompat.getColor(mContext, R.color.tab_text));
             tvTab.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
         }
     }

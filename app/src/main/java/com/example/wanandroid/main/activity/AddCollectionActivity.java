@@ -18,7 +18,7 @@ import com.example.wanandroid.event.Type;
 import com.example.wanandroid.main.event.MyCollectionEvent;
 import com.example.wanandroid.main.mvp.AddCollectionPresenter;
 import com.example.wanandroid.main.mvp.AddCollectionView;
-import com.example.wanandroid.utils.ThemeColorUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 import com.example.wanandroid.utils.UserBiz;
 
 import java.util.HashMap;

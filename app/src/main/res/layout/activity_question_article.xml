@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mPullRefreshLayout"
+    android:background="@color/white_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/questionArticle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:layout_marginTop="@dimen/space_5dp" />
+        <com.example.wanandroid.widget.MyScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_300dp"
+                    android:background="@color/remind_color"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_300dp"
+                    android:background="@color/theme_color"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_300dp"
+                    android:background="@color/color_99"/>
+                <TextView
+                    android:id="@+id/tv_remark"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_100dp"
+                    android:background="@color/black"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_300dp"
+                    android:background="@color/remind_color"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_300dp"
+                    android:background="@color/theme_color"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_300dp"
+                    android:background="@color/color_99"/>
+
+            </LinearLayout>
+        </com.example.wanandroid.widget.MyScrollView>
+    </LinearLayout>
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

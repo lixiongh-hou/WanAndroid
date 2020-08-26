@@ -10,7 +10,6 @@ import android.text.Html;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -40,7 +39,7 @@ import com.example.wanandroid.main.mvp.SearchPresenter;
 import com.example.wanandroid.main.mvp.SearchView;
 import com.example.wanandroid.ui.home.bean.DatasBean;
 import com.example.wanandroid.ui.home.event.HomeEvent;
-import com.example.wanandroid.utils.ThemeColorUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 import com.example.wanandroid.utils.UserBiz;
 import com.google.gson.Gson;
 import com.kingja.loadsir.core.LoadSir;
@@ -106,8 +105,8 @@ public class SearchActivity extends BaseInterfaceActivity<SearchPresenter> imple
         initRefresh();
         hideTitle();
         loadService = LoadSir.getDefault().register(content);
-        mStatusBarView.setBackgroundColor(ThemeColorUtil.getThemeColor(mContext));
-        mToolbar.setBackgroundColor(ThemeColorUtil.getThemeColor(mContext));
+        mStatusBarView.setBackgroundColor(ThemeColorUtil.getTitleColor(mContext));
+        mToolbar.setBackgroundColor(ThemeColorUtil.getTitleColor(mContext));
         queryAllSearchHistory(mContext);
         initPopularRv();
         initHistoryRv();
@@ -412,7 +411,7 @@ public class SearchActivity extends BaseInterfaceActivity<SearchPresenter> imple
         pressed.setShape(GradientDrawable.RECTANGLE);
         pressed.setCornerRadius(50);
         GradientDrawable normal = new GradientDrawable();
-        normal.setColor(ContextCompat.getColor(mContext, R.color.color_F5));
+        normal.setColor(ContextCompat.getColor(mContext, R.color.activity_bg));
         normal.setShape(GradientDrawable.RECTANGLE);
         normal.setCornerRadius(50);
         StateListDrawable bg = new StateListDrawable();

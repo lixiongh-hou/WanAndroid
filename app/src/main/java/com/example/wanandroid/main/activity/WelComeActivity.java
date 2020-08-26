@@ -10,7 +10,6 @@ import androidx.core.content.ContextCompat;
 import com.example.mvpbase.annotation.BindLayoutRes;
 import com.example.mvpbase.base.BaseActivity;
 import com.example.wanandroid.R;
-import com.example.wanandroid.main.activity.MainActivity;
 import com.jaredrummler.android.widget.AnimatedSvgView;
 
 import butterknife.BindView;

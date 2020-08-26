@@ -1,6 +1,11 @@
 package com.example.wanandroid.app;
 
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.ContextCompat;
+
 import com.example.mvpbase.base.BaseApp;
+import com.example.mvpbase.utils.ThemeColorUtil;
+import com.example.wanandroid.R;
 
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
@@ -22,6 +27,11 @@ public class MyApp extends BaseApp {
     @Override
     public void onCreate() {
         super.onCreate();
+        if (ThemeColorUtil.getThemeColorIndex() == 1){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
         try {
             getSSLOkHttpClient();
         } catch (Exception e) {
