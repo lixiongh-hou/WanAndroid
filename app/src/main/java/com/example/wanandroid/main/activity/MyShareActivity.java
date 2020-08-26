@@ -22,7 +22,7 @@ import com.example.wanandroid.main.bean.MyShareBean;
 import com.example.wanandroid.main.mvp.MySharePresenter;
 import com.example.wanandroid.main.mvp.MyShareView;
 import com.example.wanandroid.ui.home.bean.DatasBean;
-import com.example.wanandroid.utils.ThemeColorUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;

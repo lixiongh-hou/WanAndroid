@@ -31,11 +31,10 @@ import com.example.wanandroid.main.mvp.FootPrintView;
 import com.example.wanandroid.ui.home.bean.DatasBean;
 import com.example.wanandroid.ui.home.event.HomeEvent;
 import com.example.wanandroid.utils.AnimationUtil;
-import com.example.wanandroid.utils.ThemeColorUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 import com.example.wanandroid.utils.UserBiz;
 import com.google.gson.Gson;
 import com.zhy.adapter.recyclerview.CommonAdapter;
-import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 
 import java.util.ArrayList;
@@ -155,7 +154,7 @@ public class FootPrintActivity extends BaseInterfaceActivity<FootPrintPresenter>
             }
         };
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-        mRecyclerView.addItemDecoration(new ListDivider(5, R.color.white, false));
+        mRecyclerView.addItemDecoration(new ListDivider(5, R.color.rv_item_bg, false));
         mRecyclerView.setAdapter(mAdapter);
         RvUtil.solveNestQuestion(mRecyclerView);
     }

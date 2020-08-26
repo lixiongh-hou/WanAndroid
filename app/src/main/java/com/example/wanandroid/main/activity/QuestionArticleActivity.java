@@ -1,9 +1,14 @@
 package com.example.wanandroid.main.activity;
 
+import android.content.Context;
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,6 +20,7 @@ import com.example.mvpbase.divider.ListDivider;
 import com.example.mvpbase.eventbus.EventBusUtil;
 import com.example.mvpbase.utils.RvUtil;
 import com.example.mvpbase.utils.check.CheckUtil;
+import com.example.mvpbase.utils.log.LogUtil;
 import com.example.mvpbase.utils.toast.ToastUtil;
 import com.example.wanandroid.R;
 import com.example.wanandroid.dao.footprint.FootprintUtil;
@@ -24,8 +30,9 @@ import com.example.wanandroid.main.mvp.QuestionArticlePresenter;
 import com.example.wanandroid.main.mvp.QuestionArticleView;
 import com.example.wanandroid.ui.home.bean.DatasBean;
 import com.example.wanandroid.ui.home.event.HomeEvent;
-import com.example.wanandroid.utils.ThemeColorUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 import com.example.wanandroid.utils.UserBiz;
+import com.example.wanandroid.widget.MyScrollView;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
@@ -41,12 +48,21 @@ import butterknife.BindView;
  * Time: 14:24
  */
 @BindLayoutRes(R.layout.activity_question_article)
-public class QuestionArticleActivity extends BaseInterfaceActivity<QuestionArticlePresenter> implements QuestionArticleView {
+public class QuestionArticleActivity extends BaseInterfaceActivity<QuestionArticlePresenter>
+        implements QuestionArticleView, MyScrollView.OnScrollChangeListener {
 
     @BindView(R.id.questionArticle)
     RecyclerView mRecyclerView;
     private CommonAdapter<DatasBean> mAdapter;
     private List<DatasBean> mLists = new ArrayList<>();
+
+    private Boolean isFirst = true;
+    @BindView(R.id.scrollView)
+    MyScrollView scrollView;
+    @BindView(R.id.tv_title)
+    TextView tvTitle;
+    @BindView(R.id.tv_remark)
+    TextView tvRemark;
     @Override
     public QuestionArticlePresenter initPresenter() {
         return new QuestionArticlePresenter(this);
@@ -59,6 +75,7 @@ public class QuestionArticleActivity extends BaseInterfaceActivity<QuestionArtic
         initRefresh();
         showLoadingDialog();
         initRv();
+        scrollView.setOnScrollChangeListener(this);
     }
 
     private void initRv() {
@@ -181,5 +198,58 @@ public class QuestionArticleActivity extends BaseInterfaceActivity<QuestionArtic
     public void showErrorMsg(String msg) {
         ToastUtil.showShort(msg);
         failureAfter(mAdapter.getItemCount());
+    }
+
+    /**
+     * 用户第一次进入页面判断
+     * 如果直接在onCreate中判断是没有效果的
+     * @param hasFocus
+     */
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus && isFirst){
+            if (checkIsVisible(this, tvRemark)) {
+                LogUtil.e("slantech","tvRemark1已经可见");
+            }else {
+                LogUtil.e("slantech","tvRemark1已经不可见");
+            }
+            isFirst = false;
+        }
+    }
+    @Override
+    public void onScrollChange(MyScrollView view, int x, int y, int oldx, int oldy) {
+        if (checkIsVisible(this, tvRemark)) {
+            LogUtil.e("slantech","tvRemark2已经可见");
+        }else {
+            LogUtil.e("slantech","tvRemark2已经不可见");
+        }
+    }
+
+
+    public Boolean checkIsVisible(Context context, View view) {
+        // 如果已经加载了，判断广告view是否显示出来，然后曝光
+        int screenWidth = getScreenMetrics(context).x;
+        int screenHeight = getScreenMetrics(context).y;
+        Rect rect = new Rect(0, 0, screenWidth, screenHeight);
+        int[] location = new int[2];
+        view.getLocationInWindow(location);
+        if (view.getLocalVisibleRect(rect)) {
+            return true;
+        } else {
+            //view已不在屏幕可见区域;
+            return false;
+        }
+    }
+    /**
+     * 获取屏幕宽度和高度，单位为px
+     * @param context
+     * @return
+     */
+    public Point getScreenMetrics(Context context){
+        DisplayMetrics dm =context.getResources().getDisplayMetrics();
+        int wScreen = dm.widthPixels;
+        int hScreen = dm.heightPixels;
+        return new Point(wScreen, hScreen);
     }
 }

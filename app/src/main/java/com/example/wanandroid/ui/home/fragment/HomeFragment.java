@@ -1,10 +1,16 @@
 package com.example.wanandroid.ui.home.fragment;
 
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 
 import androidx.annotation.RequiresApi;
@@ -19,8 +25,10 @@ import com.example.mvpbase.divider.ListDivider;
 import com.example.mvpbase.loading.NetworkAnomalyCallBack;
 import com.example.mvpbase.utils.LayoutParamsUtil;
 import com.example.mvpbase.utils.RvUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 import com.example.mvpbase.utils.check.CheckUtil;
 import com.example.mvpbase.utils.constant.ConstantUtil;
+import com.example.mvpbase.utils.log.LogUtil;
 import com.example.mvpbase.utils.system.DensityUtil;
 import com.example.mvpbase.utils.toast.ToastUtil;
 import com.example.wanandroid.dao.footprint.FootprintUtil;
@@ -33,6 +41,8 @@ import com.example.wanandroid.ui.home.event.HomeEvent;
 import com.example.wanandroid.ui.home.mvp.HomePresenter;
 import com.example.wanandroid.ui.home.mvp.HomeView;
 import com.example.wanandroid.utils.UserBiz;
+import com.example.wanandroid.widget.MyScrollView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.stx.xhb.xbanner.XBanner;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
@@ -45,6 +55,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * @author: 雄厚
@@ -53,13 +64,18 @@ import butterknife.BindView;
  */
 @BindEventBus
 @BindLayoutRes(R.layout.fragment_home)
-public class HomeFragment extends BaseInterfaceFragment<HomePresenter> implements HomeView {
+public class HomeFragment extends BaseInterfaceFragment<HomePresenter> implements HomeView, MyScrollView.OnScrollChangeListener {
     @BindView(R.id.banner)
     XBanner mBanner;
     @BindView(R.id.homeRv)
     RecyclerView mRecyclerView;
     private List<DatasBean> mHomeLists = new ArrayList<>();
     private CommonAdapter<DatasBean> mAdapter;
+    @BindView(R.id.fab_add)
+    FloatingActionButton mFloatingActionButton;
+    @BindView(R.id.scrollView)
+    MyScrollView mScrollView;
+    private Boolean isFirst = true;
     public static HomeFragment getInstance() {
         return new HomeFragment();
     }
@@ -75,8 +91,18 @@ public class HomeFragment extends BaseInterfaceFragment<HomePresenter> implement
         initRefresh();
         LayoutParamsUtil.getLayoutParams(mBanner.getLayoutParams(), ViewGroup.LayoutParams.MATCH_PARENT, DensityUtil.dp2px(200));
         initRv();
+        //这里的view为fragment，minSdkVersion必须大于等于18
+        loadService.getLoadLayout().getViewTreeObserver().addOnWindowFocusChangeListener(hasFocus -> {
+            // do your stuff here
+            if (hasFocus && isFirst){
+                LogUtil.e("李雄厚", checkIsVisible(mContext, mBanner)+"");
+                mFloatingActionButton.setVisibility(checkIsVisible(mContext, mBanner) ? View.GONE : View.VISIBLE);
+                isFirst = false;
+            }
+        });
+        mFloatingActionButton.setBackgroundTintList(ColorStateList.valueOf(ThemeColorUtil.getThemeColor(mContext)));
+        mScrollView.setOnScrollChangeListener(this);
     }
-
 
     private void initRv() {
         mAdapter = new CommonAdapter<DatasBean>(mContext, R.layout.item_article_rv, mHomeLists) {
@@ -169,6 +195,11 @@ public class HomeFragment extends BaseInterfaceFragment<HomePresenter> implement
         return item.isCollect() ? R.drawable.collect_selector_icon : R.drawable.uncollect_selector_icon;
     }
 
+    @OnClick(R.id.fab_add)
+    public void onClick(){
+        mScrollView.fling(0);
+        mScrollView.smoothScrollTo(0, 0);
+    }
     /**
      * 因为要进行懒加载和刷新不走这个接口
      */
@@ -178,6 +209,7 @@ public class HomeFragment extends BaseInterfaceFragment<HomePresenter> implement
         if (isVisible) {
             getPresenter().getBanner();
         }
+
     }
 
 
@@ -189,7 +221,6 @@ public class HomeFragment extends BaseInterfaceFragment<HomePresenter> implement
         } else {
             getPresenter().getArticle(getPage());
         }
-
 
     }
 
@@ -277,6 +308,39 @@ public class HomeFragment extends BaseInterfaceFragment<HomePresenter> implement
             requestData();
         });
     }
+    @Override
+    public void onScrollChange(MyScrollView view, int x, int y, int oldx, int oldy) {
+        if (checkIsVisible(mContext, mBanner)){
+            if (mFloatingActionButton.getVisibility() == View.VISIBLE){
+                mFloatingActionButton.setVisibility(View.GONE);
+            }
+        }else {
+            if (mFloatingActionButton.getVisibility() == View.GONE){
+                mFloatingActionButton.setVisibility(View.VISIBLE);
+            }
+        }
+    }
+    public Boolean checkIsVisible(Context context, View view) {
+        // 如果已经加载了，判断广告view是否显示出来，然后曝光
+        int screenWidth = getScreenMetrics(context).x;
+        int screenHeight = getScreenMetrics(context).y;
+        Rect rect = new Rect(0, 0, screenWidth, screenHeight);
+        int[] location = new int[2];
+        view.getLocationInWindow(location);
+        //view已不在屏幕可见区域;
+        return view.getLocalVisibleRect(rect);
+    }
+    /**
+     * 获取屏幕宽度和高度，单位为px
+     * @param context
+     * @return
+     */
+    public Point getScreenMetrics(Context context){
+        DisplayMetrics dm =context.getResources().getDisplayMetrics();
+        int wScreen = dm.widthPixels;
+        int hScreen = dm.heightPixels;
+        return new Point(wScreen, hScreen);
+    }
 
     @Override
     public void onStart() {
@@ -289,5 +353,6 @@ public class HomeFragment extends BaseInterfaceFragment<HomePresenter> implement
         super.onStop();
         mBanner.stopAutoPlay();
     }
+
 
 }

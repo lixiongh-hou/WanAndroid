@@ -13,9 +13,7 @@ import com.example.mvpbase.annotation.BindEventBus;
 import com.example.mvpbase.annotation.BindLayoutRes;
 import com.example.mvpbase.base.BaseApp;
 import com.example.mvpbase.base.BaseInterfaceFragment;
-import com.example.mvpbase.loading.LoadingCallBack;
 import com.example.mvpbase.loading.NetworkAnomalyCallBack;
-import com.example.mvpbase.mvp.BasePresenter;
 import com.example.mvpbase.networks.NetWorkUtils;
 import com.example.mvpbase.utils.constant.ConstantUtil;
 import com.example.mvpbase.utils.toast.ToastUtil;
@@ -25,8 +23,7 @@ import com.example.wanandroid.main.event.ChangeThemeEvent;
 import com.example.wanandroid.ui.project.bean.ProjectListBean;
 import com.example.wanandroid.ui.project.mvp.ProjectPresenter;
 import com.example.wanandroid.ui.project.mvp.ProjectView;
-import com.example.wanandroid.ui.system.fragment.SystemDetailedFragment;
-import com.example.wanandroid.utils.ThemeColorUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 import com.example.wanandroid.wechat.bean.WeChatNameBean;
 import com.google.android.material.tabs.TabLayout;
 
@@ -138,7 +135,11 @@ public class ProjectFragment extends BaseInterfaceFragment<ProjectPresenter> imp
                         ((TextView) tabAt.getCustomView().findViewById(R.id.text1)).
                                 setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
                     }
-
+                }else {
+                    if (tabAt.getCustomView() != null){
+                        ((TextView) tabAt.getCustomView().findViewById(R.id.text1)).
+                                setTextColor(ContextCompat.getColor(mContext, R.color.tab_text));
+                    }
                 }
                 //通过tab对象找到自定义视图的ID
                 if (tabAt.getCustomView() != null) {
@@ -188,7 +189,7 @@ public class ProjectFragment extends BaseInterfaceFragment<ProjectPresenter> imp
             tvTab.setSelected(false);
             //恢复为默认字体大小
             tvTab.setTextSize(TypedValue.COMPLEX_UNIT_PX,getResources().getDimensionPixelSize(R.dimen.font_size_14sp));
-            tvTab.setTextColor(ContextCompat.getColor(mContext, R.color.color_66));
+            tvTab.setTextColor(ContextCompat.getColor(mContext, R.color.tab_text));
             tvTab.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
         }
     }

@@ -99,7 +99,7 @@ public class SystemDetailedFragment extends BaseInterfaceFragment<SystemDetailed
             }
         };
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-        mRecyclerView.addItemDecoration(new ListDivider(5, R.color.white, false));
+        mRecyclerView.addItemDecoration(new ListDivider(5, R.color.trans, false));
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(new MultiItemTypeAdapter.OnItemClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)

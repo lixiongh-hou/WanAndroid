@@ -4,11 +4,9 @@ import android.content.Context;
 import android.graphics.Typeface;
 
 import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wanandroid.R;
-import com.example.wanandroid.utils.ThemeColorUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 import com.example.wanandroid.wechat.bean.WeChatNameBean;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
@@ -32,7 +30,7 @@ public class WeChatLeftAdapter extends CommonAdapter<WeChatNameBean> {
         holder.setText(R.id.weChatLeftName, item.getName())
                 .setTag(R.id.weChatLeftMain, item.getName());
         if (holder.getAdapterPosition() == checked){
-            holder.setBackgroundColor(R.id.weChatLeftMain, ContextCompat.getColor(mContext, R.color.white))
+            holder.setBackgroundColor(R.id.weChatLeftMain, ContextCompat.getColor(mContext, R.color.white_bg))
                     .setTextColor(R.id.weChatLeftName, ThemeColorUtil.getThemeColor(mContext))
                     .setTypeface(Typeface.DEFAULT_BOLD, R.id.weChatLeftName);
         }else {

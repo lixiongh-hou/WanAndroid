@@ -2,7 +2,6 @@ package com.example.wanandroid.dilaog;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Typeface;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -11,7 +10,7 @@ import androidx.core.content.ContextCompat;
 
 import com.example.mvpbase.R;
 import com.example.mvpbase.utils.system.DensityUtil;
-import com.example.wanandroid.utils.ThemeColorUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 
 /**
  * @author: 雄厚

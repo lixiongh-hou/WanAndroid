@@ -7,7 +7,7 @@
     app:hl_dx="1dp"
     app:hl_dy="1dp"
     app:hl_shadowColor="#32999999"
-    app:hl_shadowBackColor="@color/white"
+    app:hl_shadowBackColor="@color/rv_item_bg"
     app:hl_shadowLimit="5dp"
     android:layout_marginStart="@dimen/space_5dp"
     android:layout_marginEnd="@dimen/space_5dp">
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/font_size_8sp"
-                android:textColor="@color/white"
+                android:textColor="@color/rv_item_bg"
                 android:textStyle="bold"
                 android:paddingStart="@dimen/space_2dp"
                 android:paddingEnd="@dimen/space_2dp"

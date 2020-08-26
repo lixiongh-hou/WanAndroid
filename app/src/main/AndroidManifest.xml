@@ -14,6 +14,7 @@
 
         <activity android:name=".main.activity.WelComeActivity"
             android:screenOrientation="portrait"
+            android:configChanges="uiMode"
             android:theme="@style/WelcomeTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,47 +23,60 @@
             </intent-filter>
         </activity>
         <activity android:name=".main.activity.MainActivity"
+            android:configChanges="uiMode"
             android:screenOrientation="portrait" />
         <!--登录-->
         <activity android:name=".ui.login.activity.LogInActivity"
+            android:configChanges="uiMode"
             android:screenOrientation="portrait" />
         <!--设置主题色-->
         <activity android:name=".main.activity.ThemeColorActivity"
+            android:configChanges="uiMode"
             android:screenOrientation="portrait"/>
         <!--我的收藏-->
         <activity android:name=".main.activity.MyCollectionActivity"
+            android:configChanges="uiMode"
             android:screenOrientation="portrait"/>
         <!--添加收藏-->
         <activity android:name=".main.activity.AddCollectionActivity"
+            android:configChanges="uiMode"
             android:screenOrientation="portrait"/>
         <!--体系详情-->
         <activity android:name=".ui.system.activity.SystemDetailedActivity"
+            android:configChanges="uiMode"
             android:screenOrientation="portrait"/>
         <!--足迹-->
         <activity android:name=".main.activity.FootPrintActivity"
+            android:configChanges="uiMode"
             android:screenOrientation="portrait"/>
         <!--WebView-->
         <activity android:name=".main.activity.WebViewActivity"
             android:screenOrientation="portrait"
             android:hardwareAccelerated="true"
-            android:configChanges="orientation|screenSize"/>
+            android:configChanges="orientation|screenSize|uiMode"/>
         <!--搜索-->
         <activity android:name=".main.activity.SearchActivity"
+            android:configChanges="uiMode"
             android:screenOrientation="portrait"/>
         <!--排行榜-->
         <activity android:name=".main.activity.PointsRankingActivity"
+            android:configChanges="uiMode"
             android:screenOrientation="portrait" />
         <!--我的积分-->
         <activity android:name=".main.activity.UserPointsActivity"
+            android:configChanges="uiMode"
             android:screenOrientation="portrait" />
         <!--广场-->
         <activity android:name=".main.activity.SquareActivity"
+            android:configChanges="uiMode"
             android:screenOrientation="portrait" />
         <!--我的分享-->
         <activity android:name=".main.activity.MyShareActivity"
+            android:configChanges="uiMode"
             android:screenOrientation="portrait" />
         <!--每日一问-->
         <activity android:name=".main.activity.QuestionArticleActivity"
+            android:configChanges="uiMode"
             android:screenOrientation="portrait" />
     </application>
 

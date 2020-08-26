@@ -14,8 +14,11 @@ public interface ConstantUtil {
     String COOKIE               = "cookie";
     /**用户登录判断是否登录*/
     String USER                 = "user";
-    /**主题色*/
+    /**默认的主题色*/
     String COLOR                = "color";
+    /**夜间模式切换的标题颜色，不是夜间模式就是主题色*/
+    String COLOR_TITLE          = "titleColor";
+    /**选中的主题色*/
     String COLOR_INDEX          = "colorIndex";
     /**一页显示多少条*/
     String PAGE_SIZE            = "pagesize";

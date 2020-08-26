@@ -1,25 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/mPullRefreshLayout">
-   <androidx.core.widget.NestedScrollView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:overScrollMode="never">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mPullRefreshLayout">
 
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:orientation="vertical">
-           <include layout="@layout/layout_banner"/>
+        <com.example.wanandroid.widget.MyScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
 
-           <androidx.recyclerview.widget.RecyclerView
-               android:id="@+id/homeRv"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="@dimen/space_5dp"/>
-       </LinearLayout>
-   </androidx.core.widget.NestedScrollView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <include layout="@layout/layout_banner"/>
 
-</com.scwang.smartrefresh.layout.SmartRefreshLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/homeRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5dp"/>
+            </LinearLayout>
+        </com.example.wanandroid.widget.MyScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="@dimen/space_15dp"
+        android:layout_marginBottom="@dimen/space_20dp"
+        android:src="@drawable/ic_up"
+        android:visibility="visible"
+        app:fabSize="auto"
+        app:layout_behavior=".custom.behavior.FloatScrollBehavior"
+        app:tint="@color/white"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

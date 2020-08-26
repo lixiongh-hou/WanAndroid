@@ -26,7 +26,7 @@ import com.example.wanandroid.adapter.WeChatRightAdapter;
 import com.example.wanandroid.main.activity.WebViewActivity;
 import com.example.wanandroid.main.event.ChangeThemeEvent;
 import com.example.wanandroid.ui.home.bean.DatasBean;
-import com.example.wanandroid.utils.ThemeColorUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 import com.example.wanandroid.wechat.bean.WeChatListBean;
 import com.example.wanandroid.wechat.bean.WeChatNameBean;
 import com.example.wanandroid.wechat.mvp.WeChatPresenter;
@@ -111,7 +111,7 @@ public class WeChatFragment extends BaseInterfaceFragment<WeChatPresenter> imple
         mRightAdapter = new WeChatRightAdapter(mContext, mRightLists);
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(mContext);
         mRecyclerViewRight.setLayoutManager(mLinearLayoutManager);
-        mRecyclerViewRight.addItemDecoration(new ListDivider(5, R.color.white, false));
+        mRecyclerViewRight.addItemDecoration(new ListDivider(5, R.color.trans, false));
         ((DefaultItemAnimator) mRecyclerViewRight.getItemAnimator()).setSupportsChangeAnimations(false);
         mRecyclerViewRight.setAdapter(mRightAdapter);
         mRightAdapter.setOnItemClickListener(new MultiItemTypeAdapter.OnItemClickListener() {

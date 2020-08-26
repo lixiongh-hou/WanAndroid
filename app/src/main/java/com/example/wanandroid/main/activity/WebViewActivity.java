@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import com.example.mvpbase.annotation.BindLayoutRes;
 import com.example.mvpbase.base.BaseActivity;
 import com.example.wanandroid.R;
-import com.example.wanandroid.utils.ThemeColorUtil;
+import com.example.mvpbase.utils.ThemeColorUtil;
 import com.just.agentweb.AgentWeb;
 
 import java.lang.reflect.Method;

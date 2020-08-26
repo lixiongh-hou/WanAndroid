@@ -4,7 +4,6 @@ import android.app.Application;
 import android.content.Context;
 import android.view.animation.LinearInterpolator;
 
-import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
 import com.example.mvpbase.R;
@@ -14,11 +13,6 @@ import com.example.mvpbase.loading.NetworkAnomalyCallBack;
 import com.example.mvpbase.swipeBack.ActivityLifecycleManage;
 import com.kingja.loadsir.core.LoadSir;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.DefaultRefreshFooterCreator;
-import com.scwang.smartrefresh.layout.api.DefaultRefreshHeaderCreator;
-import com.scwang.smartrefresh.layout.api.RefreshFooter;
-import com.scwang.smartrefresh.layout.api.RefreshHeader;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
@@ -60,7 +54,7 @@ public class BaseApp extends Application {
             // 设置头部和尾部的高度
             layout.setHeaderHeight(50).setFooterHeight(50)
                     // 设置主题颜色
-                    .setPrimaryColorsId(R.color.white, R.color.color_45)
+                    .setPrimaryColorsId(R.color.white_bg, R.color.refresh_text)
                     // 在内容不满一页的时候，是否可以上拉加载更多
                     .setEnableLoadMoreWhenContentNotFull(false)
                     // 是否在加载更多完成之后滚动内容显示新数据
@@ -79,8 +73,8 @@ public class BaseApp extends Application {
                     .setEnableLastTime(true).setTextSizeTime(10).setTextTimeMarginTop(2)
                     .setFinishDuration(400)
                     .setTextSizeTitle(14)
-                    .setPrimaryColor(ContextCompat.getColor(mContext, R.color.white))
-                    .setAccentColor(ContextCompat.getColor(mContext, R.color.color_45));
+                    .setPrimaryColor(ContextCompat.getColor(mContext, R.color.white_bg))
+                    .setAccentColor(ContextCompat.getColor(mContext, R.color.refresh_text));
         });
 
         SmartRefreshLayout.setDefaultRefreshFooterCreator((mContext, layout) -> new ClassicsFooter(mContext)
@@ -91,6 +85,6 @@ public class BaseApp extends Application {
                 .setFinishDuration(400)
                 .setTextSizeTitle(14)
 //                        .setPrimaryColor(ContextCompat.getColor(mContext, R.color.white))
-                .setAccentColor(ContextCompat.getColor(mContext, R.color.color_45)));
+                .setAccentColor(ContextCompat.getColor(mContext, R.color.refresh_text)));
     }
 }

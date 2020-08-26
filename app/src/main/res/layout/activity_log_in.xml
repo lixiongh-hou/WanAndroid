@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
+    android:background="@color/white_bg"
     android:orientation="vertical">
 
 
@@ -81,7 +81,7 @@
         android:layout_marginTop="45dp"
         android:layout_marginEnd="45dp"
         android:text="@string/login"
-        android:textColor="@color/white"
+        android:textColor="@color/rv_item_bg"
         android:textSize="@dimen/font_size_13sp"
         android:textStyle="bold"
         android:gravity="center"

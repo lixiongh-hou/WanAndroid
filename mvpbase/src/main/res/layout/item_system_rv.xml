@@ -7,7 +7,7 @@
     app:hl_dx="1dp"
     app:hl_dy="1dp"
     app:hl_shadowColor="#32999999"
-    app:hl_shadowBackColor="@color/white"
+    app:hl_shadowBackColor="@color/rv_item_bg"
     app:hl_shadowLimit="5dp"
     android:layout_marginStart="@dimen/space_10dp"
     android:layout_marginEnd="@dimen/space_10dp">
@@ -65,7 +65,7 @@
            <View
                android:layout_width="match_parent"
                android:layout_height="@dimen/space_1dp"
-               android:background="@color/color_F5"/>
+               android:background="@color/line_color"/>
            <androidx.recyclerview.widget.RecyclerView
                android:id="@+id/itemSystemRv"
                android:layout_width="match_parent"

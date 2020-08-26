@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/white_bg"
     android:orientation="vertical"
     android:paddingStart="@dimen/space_13dp"
     android:paddingEnd="@dimen/space_13dp">
@@ -75,6 +75,6 @@
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bg"
         android:text="@string/submit"
-        android:textColor="@color/white"
+        android:textColor="@color/rv_item_bg"
         android:layout_marginTop="@dimen/space_50dp"/>
 </LinearLayout>
