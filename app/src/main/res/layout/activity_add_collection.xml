@@ -75,6 +75,6 @@
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bg"
         android:text="@string/submit"
-        android:textColor="@color/rv_item_bg"
+        android:textColor="@color/white"
         android:layout_marginTop="@dimen/space_50dp"/>
 </LinearLayout>

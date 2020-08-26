@@ -155,7 +155,7 @@ public class UserPointsActivity extends BaseInterfaceActivity<UserPointsPresente
         mToolbar.setNavigationOnClickListener(v -> {
             finish();
         });
-        mLinearLayout.setBackgroundColor(ThemeColorUtil.getThemeColor(mContext));
+        mLinearLayout.setBackgroundColor(ThemeColorUtil.getTitleColor(mContext));
         loadService = LoadSir.getDefault().register(content);
         showLoadingDialog();
         mName.setText(mBean.getUsername());
