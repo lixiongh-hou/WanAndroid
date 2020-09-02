@@ -14,6 +14,7 @@ import com.example.wanandroid.ui.home.bean.BannerBase;
 import com.example.wanandroid.ui.home.bean.DatasBean;
 import com.example.wanandroid.ui.login.bean.LogInBean;
 import com.example.wanandroid.main.bean.MyCollectionBean;
+import com.example.wanandroid.ui.navigation.bean.NavigationBean;
 import com.example.wanandroid.ui.project.bean.ProjectListBean;
 import com.example.wanandroid.ui.system.bean.SystemBean;
 import com.example.wanandroid.wechat.bean.WeChatListBean;
@@ -274,4 +275,12 @@ public interface ApiService {
     Observable<BaseBean<QuestionArticleBean>> getQuestionArticle(
             @Path("page") String page
     );
+
+    /**
+     * 导航数据
+     * @return
+     */
+    @GET(UrlParam.Navigation.URL)
+    Observable<BaseBean<List<NavigationBean>>> getNavigation();
+
 }

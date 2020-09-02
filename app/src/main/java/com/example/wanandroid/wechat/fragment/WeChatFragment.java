@@ -4,6 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
@@ -49,10 +50,12 @@ import butterknife.BindView;
 @BindEventBus
 @BindLayoutRes(R.layout.fragment_we_chat)
 public class WeChatFragment extends BaseInterfaceFragment<WeChatPresenter> implements WeChatView {
-
     public static WeChatFragment getInstance(){
         return new WeChatFragment();
     }
+
+    @BindView(R.id.layoutLoading)
+    RelativeLayout mLayoutLoading;
 
     @BindView(R.id.WeChatLeftRv)
     RecyclerView mRecyclerViewLeft;
@@ -98,6 +101,7 @@ public class WeChatFragment extends BaseInterfaceFragment<WeChatPresenter> imple
                 if (index != i){
                     startRefresh();
                     index = i;
+                    mLayoutLoading.setVisibility(View.VISIBLE);
                 }
 
             }
@@ -163,6 +167,7 @@ public class WeChatFragment extends BaseInterfaceFragment<WeChatPresenter> imple
         if (isRefresh()){
             mRightLists.clear();
         }
+        mLayoutLoading.setVisibility(View.GONE);
         tvStickyHeaderView.setText(bean.getDatas().get(0).getAuthor());
         mRightLists.addAll(bean.getDatas());
         mRightAdapter.notifyDataSetChanged();

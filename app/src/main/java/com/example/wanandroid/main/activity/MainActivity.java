@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mvpbase.annotation.BindEventBus;
 import com.example.mvpbase.annotation.BindLayoutRes;
 import com.example.mvpbase.base.BaseActivity;
+import com.example.mvpbase.utils.log.LogUtil;
 import com.example.wanandroid.dilaog.PromptDialog;
 import com.example.mvpbase.eventbus.EventBusUtil;
 import com.example.mvpbase.swipeBack.ActivityLifecycleManage;
@@ -108,7 +109,8 @@ public class MainActivity extends BaseActivity {
             setToolBarTitle(mToolbarTitles.get(index));
             return true;
         });
-        //测试
+
+
     }
 
 
@@ -196,7 +198,7 @@ public class MainActivity extends BaseActivity {
                         gotoActivity(MyShareActivity.class);
                     }
                     break;
-                 //每日一问
+                //每日一问
                 case R.id.nav_menu_question:
                     gotoActivity(QuestionArticleActivity.class);
                     break;
@@ -207,6 +209,10 @@ public class MainActivity extends BaseActivity {
                 //足迹
                 case R.id.nav_menu_footprint:
                     gotoActivity(FootPrintActivity.class);
+                    break;
+                //设置
+                case R.id.nav_menu_setting:
+                    gotoActivity(SettingActivity.class);
                     break;
                 //退出登录
                 case R.id.nav_menu_logout:
@@ -227,6 +233,7 @@ public class MainActivity extends BaseActivity {
             return false;
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.search_menu, menu);
@@ -266,8 +273,9 @@ public class MainActivity extends BaseActivity {
         initColor();
         mMainBar.setCurrentItem(mMainBar.getCurrentItem());
     }
+
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void nightModeEvent(NightModeEvent event){
+    public void nightModeEvent(NightModeEvent event) {
         recreate();
     }
 
