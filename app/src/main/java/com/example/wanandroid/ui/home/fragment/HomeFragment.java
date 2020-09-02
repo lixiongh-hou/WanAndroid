@@ -33,6 +33,7 @@ import com.example.mvpbase.utils.system.DensityUtil;
 import com.example.mvpbase.utils.toast.ToastUtil;
 import com.example.wanandroid.dao.footprint.FootprintUtil;
 import com.example.wanandroid.main.activity.WebViewActivity;
+import com.example.wanandroid.main.event.ChangeThemeEvent;
 import com.example.wanandroid.ui.home.bean.ArticleBean;
 import com.example.wanandroid.ui.home.bean.BannerBase;
 import com.example.wanandroid.R;
@@ -95,13 +96,12 @@ public class HomeFragment extends BaseInterfaceFragment<HomePresenter> implement
         loadService.getLoadLayout().getViewTreeObserver().addOnWindowFocusChangeListener(hasFocus -> {
             // do your stuff here
             if (hasFocus && isFirst){
-                LogUtil.e("李雄厚", checkIsVisible(mContext, mBanner)+"");
                 mFloatingActionButton.setVisibility(checkIsVisible(mContext, mBanner) ? View.GONE : View.VISIBLE);
                 isFirst = false;
             }
         });
-        mFloatingActionButton.setBackgroundTintList(ColorStateList.valueOf(ThemeColorUtil.getThemeColor(mContext)));
         mScrollView.setOnScrollChangeListener(this);
+        mFloatingActionButton.setBackgroundTintList(ColorStateList.valueOf(ThemeColorUtil.getThemeColor(mContext)));
     }
 
     private void initRv() {
@@ -276,7 +276,10 @@ public class HomeFragment extends BaseInterfaceFragment<HomePresenter> implement
     public void unCollectSuc() {
 
     }
-
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void changeThemeEvent(ChangeThemeEvent event) {
+        mFloatingActionButton.setBackgroundTintList(ColorStateList.valueOf(ThemeColorUtil.getThemeColor(mContext)));
+    }
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void homeEvent(HomeEvent event) {
         switch (event.type) {

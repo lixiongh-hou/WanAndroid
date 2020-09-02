@@ -154,7 +154,7 @@ public class FootPrintActivity extends BaseInterfaceActivity<FootPrintPresenter>
             }
         };
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-        mRecyclerView.addItemDecoration(new ListDivider(5, R.color.rv_item_bg, false));
+        mRecyclerView.addItemDecoration(new ListDivider(5, R.color.trans, false));
         mRecyclerView.setAdapter(mAdapter);
         RvUtil.solveNestQuestion(mRecyclerView);
     }

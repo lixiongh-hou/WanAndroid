@@ -185,6 +185,12 @@ public interface UrlParam {
         String URL = "wenda/list/{page}/json";
     }
 
+    /**
+     * 导航
+     */
+    interface Navigation{
+        String URL = "navi/json";
+    }
 
 
 }

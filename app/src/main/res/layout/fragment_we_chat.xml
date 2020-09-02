@@ -34,12 +34,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/mPullRefreshLayout">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/WeChatRightRv"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:overScrollMode="never"/>
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/WeChatRightRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never"/>
+                <include layout="@layout/layout_loading"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
         </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 

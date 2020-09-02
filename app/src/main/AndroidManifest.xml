@@ -78,6 +78,10 @@
         <activity android:name=".main.activity.QuestionArticleActivity"
             android:configChanges="uiMode"
             android:screenOrientation="portrait" />
+        <!--设置-->
+        <activity android:name=".main.activity.SettingActivity"
+            android:configChanges="uiMode"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

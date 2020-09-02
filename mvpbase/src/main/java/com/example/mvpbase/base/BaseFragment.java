@@ -85,6 +85,7 @@ public abstract class BaseFragment extends Fragment {
                             reLoad(v.findViewById(R.id.reload));
                         }
                     });
+            loadService.showSuccess();
         } else {
             ViewGroup group = (ViewGroup) rootView.getParent();
             if (null != group) {

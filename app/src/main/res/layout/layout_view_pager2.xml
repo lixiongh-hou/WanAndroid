@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    app:cardCornerRadius="@dimen/space_3dp"
+    app:cardBackgroundColor="@color/rv_bg"
+    app:cardMaxElevation="@dimen/space_10dp"
+    app:cardElevation="@dimen/space_10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="李雄厚"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_size_18sp"
+            android:id="@+id/viewPager2Text"
+            android:layout_marginTop="@dimen/space_13dp"
+            android:layout_marginStart="@dimen/space_13dp"
+            android:layout_marginEnd="@dimen/space_13dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/viewPager2Rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_8dp"
+            android:layout_marginEnd="@dimen/space_8dp"
+            android:layout_marginTop="@dimen/space_13dp"
+            android:layout_marginBottom="@dimen/space_13dp"
+            android:overScrollMode="never"/>
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
